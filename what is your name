@@ -1,11 +1,22 @@
-print ("what is your first name?")
-firstname = input()
-print ("what is your surname?")
-surname = input()
-print ("hello,", firstname,surname)
-print("your initials are:",firstname[0],surname[0])
+# Ask the user for their first name and surname
+firstname = input("What is your first name? ")
+surname = input("What is your surname? ")
+
+# Greet the user
+print(f"Hello, {firstname} {surname}")
+
+# Display the users initials
+initials = firstname[0] + surname[0]
+print("Your initials are:", initials)
+
+# Combine into their full name
 fullname = firstname + " " + surname
-print (fullname)
-print (surname.upper() + " " + firstname.upper())
-len(firstname[0])
-len(surname[0])
+print("Full name:", fullname)
+
+# 
+Display name in uppercase (surname first)
+print("Uppercase format:", surname.upper(), firstname.upper())
+
+# Show the lengths of the names
+print("Length of first name:", len(firstname))
+print("Length of surname:", len(surname))
