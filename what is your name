@@ -1,4 +1,4 @@
-# Ask the user for their first name and surname
+ # Ask the user for their first name and surname
 firstname = input("What is your first name? ")
 surname = input("What is your surname? ")
 
@@ -13,8 +13,7 @@ print("Your initials are:", initials)
 fullname = firstname + " " + surname
 print("Full name:", fullname)
 
-# 
-Display name in uppercase (surname first)
+# Display name in uppercase (surname first)
 print("Uppercase format:", surname.upper(), firstname.upper())
 
 # Show the lengths of the names

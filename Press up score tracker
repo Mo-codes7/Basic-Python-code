@@ -1,0 +1,60 @@
+def main():
+    # Prompt user for the first press-up score
+    try:
+        first_score = int(input("Enter first press-up score (0 to quit): "))
+    except ValueError:
+        # Handle non-integer input
+        print("Invalid input. Please enter a number.")
+        return
+
+    # If the user enters 0 immediately, exit the program
+    if first_score == 0:
+        print("No scores entered.")
+        return
+
+    # Initialize highest, lowest, total, and count with the first score
+    highest_score = first_score
+    lowest_score = first_score
+    score_total = first_score
+    number_of_scores = 1
+
+    while True:
+        try:
+            # Ask for the next score
+            score = int(input("Enter next score (0 to end): "))
+        except ValueError:
+            # Ignore invalid inputs and prompt again
+            print("Invalid input. Please enter a number.")
+            continue
+
+        # If 0 is entered, end the loop
+        if score == 0:
+            break
+
+        # Add score to the total
+        score_total += score
+        number_of_scores += 1
+
+        # Check and update highest score
+        if score > highest_score:
+            highest_score = score
+
+        # Check and update lowest score
+        if score < lowest_score:
+            lowest_score = score
+
+    # Calculate the average (integer division)
+    average_score = score_total // number_of_scores
+
+    # Display the results
+    print("\nResults:")
+    print("Highest score =", highest_score)
+    print("Lowest score =", lowest_score)
+    print("Average score =", average_score)
+
+    # Wait for user to press 'G' to exit
+    input("\nPress G to exit ")
+
+# Run the main function
+if __name__ == "__main__":
+    main()

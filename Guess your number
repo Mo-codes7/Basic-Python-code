@@ -1,0 +1,35 @@
+def main():
+    print("Think of a number, and I will try to guess it!")
+    print("Respond with:")
+    print("  H if my guess is too high")
+    print("  L if my guess is too low")
+    print("  C if I guessed correctly")
+    print("*******************************")
+
+    try:
+        maximum = int(input("Enter the highest number in the range: "))
+    except ValueError:
+        print("Invalid input. Please enter a whole number.")
+        return
+
+    minimum = 1
+    guesses = 0
+
+    while minimum <= maximum:
+        guess = (minimum + maximum) // 2
+        guesses += 1
+        print(f"\nMy guess is: {guess}")
+        reply = input("Is it (H)igh, (L)ow, or (C)orrect? ").strip().upper()
+
+        if reply == "C":
+            print(f"\nYay! I guessed your number in {guesses} tries.")
+            break
+        elif reply == "H":
+            maximum = guess - 1
+        elif reply == "L":
+            minimum = guess + 1
+        else:
+            print("Please enter only H, L, or C.")
+
+    else:
+        print("\nHmm... something doesn't

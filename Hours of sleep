@@ -1,0 +1,21 @@
+# This script calculates your sleep statistics based on user input
+
+# Welcome message
+print("\nDo you have enough sleep?\n")
+
+# Collect user input
+username = input("Enter your username: ")
+hours_per_night = int(input("How many hours do you sleep per night? "))
+
+# Calculations
+hours_per_week = hours_per_night * 7
+hours_per_month = hours_per_week * 4.35  # Average weeks per month
+avg_sleep_per_day = hours_per_month / 30  # Approximate days in a month
+
+# Sleep quality check
+if hours_per_night < 6:
+    sleep_quality = "too little sleep. Try to get more rest!"
+elif 6 <= hours_per_night < 8:
+    sleep_quality = "an adequate amount of sleep."
+else:
+    sleep
